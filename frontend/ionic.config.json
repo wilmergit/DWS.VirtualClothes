@@ -1,0 +1,7 @@
+{
+  "name": "VirtualClothes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
