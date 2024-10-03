@@ -1,27 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Virtual Clothing </ion-title>
+    <ion-title class="ion-text-center"> Virtual Clothing </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [formGroup]="clothingForm" (ngSubmit)="createClothing">
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-input formControlName="description" type="text"></ion-input>
+    </ion-item>
+    <ion-note
+      color="danger"
+      *ngIf="getFormControl('description')?.hasError('required') && getFormControl('description')?.touched"
+      >Description is mandatory!
+    </ion-note>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
-    </p>
-  </div>
-  <ion-button (click)="gotoClothing()">Show Clothes</ion-button>
+    <ion-item>
+      <ion-label position="floating">Brand</ion-label>
+      <ion-input formControlName="brand" type="text"></ion-input>
+    </ion-item>
+    <ion-note
+      color="danger"
+      *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched"
+      >Brand is mandatory!
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Size</ion-label>
+      <ion-input formControlName="size" type="text"></ion-input>
+    </ion-item>
+    <ion-note
+      color="danger"
+      *ngIf="getFormControl('size')?.hasError('required') && getFormControl('size')?.touched"
+      >Size is mandatory!
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input formControlName="price" type="text"></ion-input>
+    </ion-item>
+    <ion-note
+      color="danger"
+      *ngIf="getFormControl('price')?.hasError('required') && getFormControl('price')?.touched"
+      >Price is mandatory!
+    </ion-note>
+  </form>
+  <ion-button class="ion-center" (click)="gotoClothing()"
+    >Show Clothes</ion-button
+  >
 </ion-content>

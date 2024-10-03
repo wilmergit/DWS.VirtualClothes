@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +15,13 @@ export class ClothingService {
 
   delete(id: any) {
     return this.httpClient.delete(`${this.endpoint}/${id}`);
+  }
+
+  create(clothing: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    const body = new URLSearchParams();
   }
 }
