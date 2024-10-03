@@ -1,6 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
+var corsOptions = {
+  origin: "http://localhost:8100",
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -10,7 +17,7 @@ const db = require("./models");
 // normal use. Doesn't delete the database data
 // db.sequelize.sync();
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   console.log("Drop and re-sync db.");
 });
 
