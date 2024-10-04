@@ -8,6 +8,10 @@
   <div class="stl">
     <div class="content">
       <h1>Share your art with us!</h1>
+      <p class="intro">
+        If you are an artist and want the world to know your work, fill the form
+        below and we will make sure everyone gets in touch with it.
+      </p>
       <div class="gallery">
         <div class="image">
           <img src="../../assets/images/dsw-clothes.png" alt="1" />
@@ -28,17 +32,17 @@
           <ion-input formControlName="description" type="text"></ion-input>
         </ion-item>
         <ion-note
-          color="danger"
+          color="light"
           *ngIf="getFormControl('description')?.hasError('required') && getFormControl('description')?.touched"
           >Description is mandatory!
         </ion-note>
 
         <ion-item color="dark" class="lastOne">
-          <ion-label position="floating">Brand</ion-label>
+          <ion-label position="floating">Your Brand</ion-label>
           <ion-input formControlName="brand" type="text"></ion-input>
         </ion-item>
         <ion-note
-          color="danger"
+          color="light"
           *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched"
           >Brand is mandatory!
         </ion-note>
@@ -48,7 +52,7 @@
           expand=""
           type="submit"
           [disabled]="!clothingForm.valid"
-          >Añadir a la lista</ion-button
+          >Add a piece</ion-button
         >
       </form>
     </div>

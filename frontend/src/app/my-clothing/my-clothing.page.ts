@@ -14,13 +14,11 @@ export class MyClothingPage implements OnInit {
     private clothingService: ClothingService,
     private router: Router
   ) {}
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     this.getAllClothing();
   }
-
-  /*   ionViewWillEnter() {
-    this.getAllClothing();
-  } */
 
   gotoHome() {
     this.router.navigateByUrl('/home');

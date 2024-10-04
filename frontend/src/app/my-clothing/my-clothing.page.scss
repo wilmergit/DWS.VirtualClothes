@@ -2,11 +2,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Basic&display=swap");
 
+.cont {
+  width: 90%;
+  border-radius: 10px 10px 10px 10px;
+  height: 70vh;
+}
+
+.imp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #tlt {
   font-family: "Spicy Rice", serif;
   font-size: 60px;
   font-weight: 400;
   font-style: normal;
+  color: #bcc1bb;
 }
 
 ion-title {
@@ -20,7 +34,6 @@ h1 {
   font-family: "Basic", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #bcc1bb;
 }
 
 p {
@@ -31,6 +44,9 @@ p {
 
 .list {
   background: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .item {
@@ -39,6 +55,7 @@ p {
   font-style: normal;
   margin-bottom: 1em;
   border-radius: 10px;
+  width: 300px;
 }
 
 ion-button {

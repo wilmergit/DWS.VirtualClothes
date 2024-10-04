@@ -11,20 +11,25 @@
 
 <ion-content [fullscreen]="true">
   <ion-content color="dark" class="ion-padding">
-    <ion-button color="light" class="home-btn" (click)="gotoHome()"
-      ><ion-icon name="arrow-back-outline"></ion-icon>Back to home</ion-button
-    >
-    <h1 id="tlt" class="ion-text-left">List of clothes.</h1>
-    <ion-list class="list">
-      <ion-item color="light" class="item" *ngFor="let c of clothing">
-        <ion-label>
-          <h1>{{c.description}}</h1>
-          <p>Brand: {{c.brand}}</p>
-        </ion-label>
-        <ion-button (click)="deleteClothing(c.id)" color="danger"
-          >Delete</ion-button
+    <div class="imp">
+      <div class="cont">
+        <ion-button color="light" class="home-btn" (click)="gotoHome()"
+          ><ion-icon name="arrow-back-outline"></ion-icon>Back to
+          home</ion-button
         >
-      </ion-item>
-    </ion-list>
+        <h1 id="tlt" class="ion-text-left">List of clothes.</h1>
+        <ion-list class="list">
+          <ion-item color="light" class="item" *ngFor="let c of clothing">
+            <ion-label>
+              <h1 class="item-desc">{{c.description}}</h1>
+              <p>Brand: {{c.brand}}</p>
+            </ion-label>
+            <ion-button (click)="deleteClothing(c.id)" color="danger"
+              >Delete</ion-button
+            >
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
   </ion-content>
 </ion-content>
