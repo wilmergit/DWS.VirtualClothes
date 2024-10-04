@@ -6,12 +6,6 @@ module.exports = (sequelize, Sequelize) => {
     brand: {
       type: Sequelize.STRING,
     },
-    size: {
-      type: Sequelize.STRING,
-    },
-    price: {
-      type: Sequelize.FLOAT,
-    },
   });
 
   return Clothing;

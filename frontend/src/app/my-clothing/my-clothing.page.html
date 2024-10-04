@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="toolbar" color="dark">
-    <ion-title href="../home/home.page.html" class="ion-text-center"
+    <ion-title
+      color="light"
+      href="../home/home.page.html"
+      class="ion-text-center"
       >Virtual Clothing</ion-title
     >
   </ion-toolbar>
@@ -8,14 +11,15 @@
 
 <ion-content [fullscreen]="true">
   <ion-content color="dark" class="ion-padding">
-    <h1 class="ion-text-left">List of clothes.</h1>
+    <ion-button color="light" class="home-btn" (click)="gotoHome()"
+      ><ion-icon name="arrow-back-outline"></ion-icon>Back to home</ion-button
+    >
+    <h1 id="tlt" class="ion-text-left">List of clothes.</h1>
     <ion-list class="list">
       <ion-item color="light" class="item" *ngFor="let c of clothing">
         <ion-label>
           <h1>{{c.description}}</h1>
           <p>Brand: {{c.brand}}</p>
-          <p>Size: {{c.size}}</p>
-          <p>Price: {{c.price}}</p>
         </ion-label>
         <ion-button (click)="deleteClothing(c.id)" color="danger"
           >Delete</ion-button

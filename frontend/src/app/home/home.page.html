@@ -1,52 +1,59 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title class="ion-text-center"> Virtual Clothing </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form [formGroup]="clothingForm" (ngSubmit)="createClothing">
-    <ion-item>
-      <ion-label position="floating">Description</ion-label>
-      <ion-input formControlName="description" type="text"></ion-input>
-    </ion-item>
-    <ion-note
-      color="danger"
-      *ngIf="getFormControl('description')?.hasError('required') && getFormControl('description')?.touched"
-      >Description is mandatory!
-    </ion-note>
+<ion-content color="dark" [fullscreen]="true">
+  <div class="stl">
+    <div class="content">
+      <h1>Share your art with us!</h1>
+      <div class="gallery">
+        <div class="image">
+          <img src="../../assets/images/dsw-clothes.png" alt="1" />
+        </div>
+        <div class="image">
+          <img src="../../assets/images/dsw-clothes2.png" alt="2" />
+        </div>
+        <div class="image">
+          <img src="../../assets/images/dsw-clothes3.png" alt="3" />
+        </div>
+        <div class="image">
+          <img src="../../assets/images/dsw-clothes4.png" alt="4" />
+        </div>
+      </div>
+      <form [formGroup]="clothingForm" (ngSubmit)="createClothing()">
+        <ion-item color="dark" class="one">
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="description" type="text"></ion-input>
+        </ion-item>
+        <ion-note
+          color="danger"
+          *ngIf="getFormControl('description')?.hasError('required') && getFormControl('description')?.touched"
+          >Description is mandatory!
+        </ion-note>
 
-    <ion-item>
-      <ion-label position="floating">Brand</ion-label>
-      <ion-input formControlName="brand" type="text"></ion-input>
-    </ion-item>
-    <ion-note
-      color="danger"
-      *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched"
-      >Brand is mandatory!
-    </ion-note>
-
-    <ion-item>
-      <ion-label position="floating">Size</ion-label>
-      <ion-input formControlName="size" type="text"></ion-input>
-    </ion-item>
-    <ion-note
-      color="danger"
-      *ngIf="getFormControl('size')?.hasError('required') && getFormControl('size')?.touched"
-      >Size is mandatory!
-    </ion-note>
-
-    <ion-item>
-      <ion-label position="floating">Price</ion-label>
-      <ion-input formControlName="price" type="text"></ion-input>
-    </ion-item>
-    <ion-note
-      color="danger"
-      *ngIf="getFormControl('price')?.hasError('required') && getFormControl('price')?.touched"
-      >Price is mandatory!
-    </ion-note>
-  </form>
-  <ion-button class="ion-center" (click)="gotoClothing()"
-    >Show Clothes</ion-button
-  >
+        <ion-item color="dark" class="lastOne">
+          <ion-label position="floating">Brand</ion-label>
+          <ion-input formControlName="brand" type="text"></ion-input>
+        </ion-item>
+        <ion-note
+          color="danger"
+          *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched"
+          >Brand is mandatory!
+        </ion-note>
+        <ion-button
+          class="add-btn"
+          color="light"
+          expand=""
+          type="submit"
+          [disabled]="!clothingForm.valid"
+          >Añadir a la lista</ion-button
+        >
+      </form>
+    </div>
+    <ion-button color="tertiary" (click)="gotoClothing()"
+      >Show Clothes</ion-button
+    >
+  </div>
 </ion-content>

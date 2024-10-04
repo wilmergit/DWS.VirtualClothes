@@ -23,5 +23,9 @@ export class ClothingService {
     });
 
     const body = new URLSearchParams();
+    body.append('description', clothing.description);
+    body.append('brand', clothing.brand);
+
+    return this.httpClient.post(this.endpoint, body.toString(), { headers });
   }
 }
